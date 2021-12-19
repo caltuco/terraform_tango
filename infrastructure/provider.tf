@@ -11,7 +11,7 @@ terraform {
   required_providers {
     aws = ">= 3.15.0"
   }
-  
+
   backend "s3" {
     bucket = "tf-state-caltuco"
     key    = "terraform/terraform.tfstate"

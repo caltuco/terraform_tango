@@ -1,32 +1,38 @@
-variable "create_s3" {
-  type = bool
-  default = false
-}
+# variable "create_s3" {
+#   type = bool
+#   default = false
+# }
 
-variable "custom_bucket_name" {
-  type = string
-  }
+variable "buckets_parameters" {
+  type    = list(object({
+            bucket = string,
+            acl = string,
+            policy = string,
+            website = map(string),
+            }))
+          }
+
 
 variable "global_tags" {
   type = map
   default = {}
   }
 
-variable "website" {
-  description = "Map containing static web-site hosting or redirect configuration."
-  type        = map(string)
-  default     = {}
-}
+# variable "website" {
+#   description = "Map containing static web-site hosting or redirect configuration."
+#   type        = map(string)
+#   default     = {}
+# }
 
-variable "policy" {
-  description = "(Optional) A valid bucket policy JSON document. Note that if the policy document is not specific enough (but still valid), Terraform may view the policy as constantly changing in a terraform plan. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with Terraform, see the AWS IAM Policy Document Guide."
-  type        = string
-  default     = null
-}
+# variable "policy" {
+#   description = "(Optional) A valid bucket policy JSON document. Note that if the policy document is not specific enough (but still valid), Terraform may view the policy as constantly changing in a terraform plan. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with Terraform, see the AWS IAM Policy Document Guide."
+#   type        = string
+#   default     = null
+# }
 
-variable "acl" {
-  default = "private"
-}
+# variable "acl" {
+#   default = "private"
+# }
 
 
 variable "block_public_acls" {
