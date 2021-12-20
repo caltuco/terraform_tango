@@ -15,4 +15,4 @@ jobs:
            uses: actions/checkout@v2
          - name: running pre-commit
            run: |
-              run -a
+             docker -v $(pwd):/lint -w /lint run -a
