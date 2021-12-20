@@ -1,6 +1,8 @@
 name: run pre-commit checks
-on: push
-
+on:
+  push:
+    branches:
+      - documentation
 jobs:
   pre-commit:
     name: Pester test
