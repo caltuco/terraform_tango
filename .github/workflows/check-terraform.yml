@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/antonbabenko/pre-commit-terraform:latest
+      options: -v $(pwd):/lint -w /lint run -a
     steps:
          - name: Check out repository code
            uses: actions/checkout@v2
-         - name: running pre-commit
-           run: |
-             docker -v $(pwd):/lint -w /lint run -a
