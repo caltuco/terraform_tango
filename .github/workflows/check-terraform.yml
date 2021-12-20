@@ -3,9 +3,16 @@ on:
   push:
     branches:
       - documentation
+env:
+    TAG: latest
 jobs:
   pre-commit:
     name: pre-commit
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/antonbabenko/pre-commit-terraform:latest
+      image: ghcr.io/antonbabenko/pre-commit-terraform:${TAG}
+    steps:
+         - name: running pre-commit
+           run: |
+             node -v
+             cat /etc/os-release
