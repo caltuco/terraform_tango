@@ -1,1 +1,11 @@
+name: run pre-commit checks
+on: push
 
+jobs:
+  pre-commit:
+    name: Pester test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking bash version
+       shell: bash
+       run: bash --version
