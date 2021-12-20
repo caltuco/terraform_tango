@@ -10,7 +10,7 @@ jobs:
     name: pre-commit
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/antonbabenko/pre-commit-terraform:${TAG}
+      image: ghcr.io/antonbabenko/pre-commit-terraform:latest
     steps:
          - name: running pre-commit
            run: |
