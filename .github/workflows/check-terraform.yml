@@ -8,6 +8,6 @@ jobs:
     name: Pester test
     runs-on: ubuntu-latest
     steps:
-       name: checking bash version
-       shell: bash
-       run: bash --version
+       - name: checking bash version
+         shell: bash
+         run: bash --version
