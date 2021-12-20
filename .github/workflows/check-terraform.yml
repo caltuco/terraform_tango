@@ -5,3 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/antonbabenko/pre-commit-terraform:latest
+      steps:
+        - name: test pre-commit
+          run: pre-commit --version
