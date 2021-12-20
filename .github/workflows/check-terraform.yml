@@ -3,8 +3,6 @@ on: push
 jobs:
   docker:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/antonbabenko/pre-commit-terraform:latest
-      steps:
-        - name: test pre-commit
-          run: pre-commit --version
+    services:
+      pre-commit:
+        image: ghcr.io/antonbabenko/pre-commit-terraform:latest
