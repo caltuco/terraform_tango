@@ -1,0 +1,11 @@
+name: checking-terraform
+on: push
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/antonbabenko/pre-commit-terraform:latest
+    steps:
+      -name: running terraform docker checks
+       run: |
+         run -a
