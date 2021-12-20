@@ -11,7 +11,8 @@ jobs:
     container:
       image: ghcr.io/antonbabenko/pre-commit-terraform:latest
     steps:
+         - name: Check out repository code
+           uses: actions/checkout@v2
          - name: running pre-commit
            run: |
-             -v $(pwd):/lint -w /lint run -a
-             
+              run -a
