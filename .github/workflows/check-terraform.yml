@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - documentation
-env:
-    TAG: latest
+
 jobs:
   pre-commit:
     name: pre-commit
@@ -14,5 +13,5 @@ jobs:
     steps:
          - name: running pre-commit
            run: |
-             node -v
-             cat /etc/os-release
+             -v $(pwd):/lint -w /lint run -a
+             
